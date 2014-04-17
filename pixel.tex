@@ -1,0 +1,55 @@
+%\documentclass{article}
+\documentclass{cmspaper}
+\usepackage{graphicx}
+\usepackage{rotating}
+\usepackage{epstopdf}
+\epstopdfsetup{update}
+
+\newcommand{\ns} {~\mathrm{ns\ }} 
+\newcommand{\gev}{~\mathrm{GeV\ }} 
+\newcommand{\tev}{~\mathrm{TeV\ }} 
+\newcommand{\QCD} {QCD $p_T[30,80]$}
+\newcommand{\QCDLowEnergy} {QCD $p_T[30,80] ~8\tev ~50\ns$}
+\newcommand{\QCDHighEnergy}{QCD $p_T[30,80] ~13\tev~25\ns$}
+\newcommand{\Zee}{$Z\to ee$\ }
+\newcommand{\ZeeLowEnergy}{$Z\to ee ~8\tev~50\ns$\ }
+\newcommand{\ZeeHighEnergy}{$Z\to ee ~13\tev~25\ns$\ }
+\newcommand{\ttbar}{$t\bar{t} ~13\tev~25\ns$\ }
+\newcommand{\DoubleElectron}{DoubleElectron}
+
+\begin{document}
+
+\title{Study of GSF electron reconstruction in the HLT: pixel match window optimisation}
+
+\begin{abstract}
+This note describes a study of the optimisation of the pixel match window with respect to reconstructed GSF electrons in the HLT at CMS.  The results are presented for $8\tev$ data using the double electron sample, simulation of QCD processes at $8\tev$ with $50\ns$ bunch spacing and $13\tev$ with $25\ns$ bunch spacing, and simulation of $Z\to ee$ at $8\tev$ and $25\ns$ bunch spacing.
+\end{abstract}
+
+\tableofcontents
+
+\input{main/introduction}
+\input{main/data}
+\clearpage
+\input{main/vars}
+\clearpage
+\input{main/efficiency}
+\clearpage
+\input{main/conclusion}
+
+\clearpage
+\begin{appendix}
+\section{Appendices}
+\input{main/implementation}
+\input{appendix/appendix_timing}
+\clearpage
+\input{appendix/appendix_et}
+\clearpage
+\input{appendix/appendix_var_byCharge}
+\clearpage
+\input{appendix/appendix_var_byTrigger}
+\clearpage
+\input{appendix/appendix_efficiency}
+\end{appendix}
+
+\end{document}
+

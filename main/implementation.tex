@@ -1,0 +1,14 @@
+\subsection{Implementation}
+
+The new pixel window selections are implemented using an HLT filter module known as \texttt{HLTElectronPixelMatchSFilter}, where \texttt{S} refers to the use of the $s$ variables.  The \texttt{HLTElectronPixelMatchSFilter} module is based on the existing \texttt{HLTElectronPixelMatchFilter} module with the following additional parameters:
+
+\begin{itemize}
+  \item \texttt{s\_a\_phi1X}, \texttt{s\_a\_phi2X}: The means of the absolute values of the variables $\Delta\phi_1^X$, and $\Delta\phi_2^X$, where $X=B,I,F$.
+  \item \texttt{s\_a\_zB}, \texttt{s\_a\_rI}, \texttt{s\_a\_rF}: The means of the absolute values of the variables $\Delta z_{2B}$, $\Delta r_{2I}$, and $\Delta r_{2F}$.
+  \item \texttt{s2\_threshold}: The selection requirement placed on the $s$ variable.  To save CPU time, the value of $s^2$ is calculated rather than the value of $s$.
+  \item \texttt{use\_s}: If this value is set to $0$ then the $s^2$ selection is not applied.  This is necessary for timing studies.
+\end{itemize}
+
+Internally the reciprocals of the variables \texttt{s\_a\_phi1X} etc are calculated when the class is constructed, to save CPU time.  Similarly, the square root of the $s^2$ variable is not calculated.
+
+For the analysis of the pixel matching study a dedicated module, called \texttt{HLTElectronPixelMatchFilterAnalysis} was written, based on the \texttt{HLTElectronPixelMatchFilter}.  This module writes a ROOT ntuple to disk, storing the four momentum of each superclusters, the values of $\Delta\phi_1$, $\Delta\phi_2$, $\Delta rz_1$, $\Delta rz_2$ for both positive and negative charge hypotheses, and the subdetectors of the pixel hits.  These ntuples are analysed offline.

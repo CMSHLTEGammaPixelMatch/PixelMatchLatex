@@ -1,0 +1,30 @@
+\section{Variable spectra}
+
+In addition to $\Delta\phi_1$, $\Delta\phi_2$, and $\Delta rz$, a discriminant, $s$, is defined to simplify the analysis and improve discrimination between real and fake electrons.  The definition of $s_x$ is given by:
+
+\begin{equation}
+  s_x^2 = \frac{\Delta\phi_1^2}{m(\Delta\phi_1)^2} + \frac{\Delta\phi_2^2}{m(\Delta\phi_2)^2} + \frac{\Delta rz_x^2}{m(\Delta rz_x)^2}
+\end{equation}
+where $x=B,I,F$, and $m(y)$ is the mean of the absolute value of the variable $y$, taken from the sum of all signal MC samples, and $rz_B=z_B$, $rz_I=r_I$, and $rz_F=r_F$.  The means of the distributions are shown in table \ref{tab:s_parameters}.
+
+Figures \ref{fig:var_phi1_ea}-\ref{fig:var_s_ea} show the spectra for the variables per supercluster used in this analysis.  For superclusters with multiple helices, the helix with the smallest value of $s$ is chosen.  All electron helices are required to pass the small pixel window.  Due to memory constraints, only the first 50 helices are stored per supercluster.
+
+\begin{table}[!hbt]
+  \begin{center}
+    \begin{tabular}{cccc}
+      \hline
+                        & Barrel    & Intermediate & Forward  \\
+      \hline
+      $m(\Delta\phi_1)$ &  $0.0069$ &     $0.0088$ &  $0.0076$ \\
+      $m(\Delta\phi_2)$ & $0.00037$ &    $0.00070$ & $0.00906$ \\
+      $m(\Delta z_B)$   &   $0.012$ &            - &         - \\
+      $m(\Delta r_I)$   &         - &      $0.027$ &         - \\
+      $m(\Delta r_F)$   &         - &            - &   $0.040$ \\
+      \hline
+    \end{tabular}
+    \caption{The means of the variables used to calculate the $s$ variables.}
+    \label{tab:s_parameters}
+  \end{center}
+\end{table}
+
+\input{snippets/vars_plots_ea}

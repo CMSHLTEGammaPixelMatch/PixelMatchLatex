@@ -1,0 +1,54 @@
+\section{Introduction}
+
+In this note I study the signal efficiency and fake rate for the pixel match window.  Pixel hits are matched to superclusters in the ECAL in the following manner.  The position of the barycenter of the supercluster is used to define an analytic helix which is back propagated, assuming an homogenous magnetic field and using the transverse energy of the supercluster to estimate the curvature of the helix.  Hits are matched by propagating the helix to module planes of the hits.  A hit is considered to be matched if the differences between the $\phi$ and $z$ ($r$) coordinates between the module plane and helix are within ranges of $\Delta\phi$ and $\Delta z$ ($\Delta r$) for hits in the barrel (endcap).  Matches are required for at least two of the three layers, and the innermost layer is matched first with an initial propagation using a loose range in $\Delta\phi$ and $\Delta z$ ($\Delta r$).  The helix is then redefined using the position of the matched hit in the innermost layer, and the helix is propagated out to a second hit.
+%AN2010_470_v2
+
+The size of the window in $\Delta\phi$, $\Delta z$, and $\Delta r$ is referred to as the pixel match window.  Two pixel hits consistent with an electron trajectory are required to fall within the pixel match window.  There are three categories of electron candidate depending on the location of the pixel hits:
+\begin{itemize}
+  \item Barrel (B): Both pixel hits are in the barrel
+  \item Intermediate (I): The first pixel hit is in the barrel and the second pixel hit is in the endcap
+  \item Forward (F): Both pixel hits are in the endcap
+  
+\end{itemize}
+
+The following variables were used to define the pixel window in 2010-2012:
+\begin{itemize}
+  \item $\Delta\phi_1^{min}$, the lower (upper) range of $\Delta\phi$ for the first pixel hit for a positive (negative) charge hypothesis, where $\Delta\phi$ is the normalised difference in $\phi$ between the pixel hit, and the trajectory of the electron at the point of closest approach
+  \item $\Delta\phi_1^{max}$, the upper (lower) range of $\Delta\phi$ for the first pixel hit for a positive (negative) charge hypothesis
+  \item $\Delta\phi_2$, the absolute range of $\Delta\phi$ for the second pixel hit
+  \item $\Delta z_B$, the absolute range of $\Delta z$ for the second pixel hit for barrel electrons between the pixel hit and the electron trajectory at the point of closest approach
+  \item $\Delta r_{2F}$, the absolute range of $\Delta r$ for the second pixel hit for forward electrons between the pixel hit and the electron trajectory at the point of closest approach
+  \item $\Delta r_I$, the absolute range of $\Delta r$ for the second pixel hit for intermediate electrons between the pixel hit and the electron trajectory at the point of closest approach
+\end{itemize}
+
+For historic reasons the window is asymmetric in the $\Delta\phi_1$ variable.  Each category of electrons has four parameters.
+
+\subsection{Pixel window definitions}
+
+In 2010-2012 there were two pixel windows defined: the small window (SW) and large window (LW).  The values of the selection criteria for the various windows are shown in table \ref{tab:window_definitions}.
+
+\begin{table}[!hbt]
+  \begin{center}
+    \begin{tabular}{cc|cccc}
+      \hline
+      Variable                   & Region       & SW       & LW       \\
+      \hline
+      $\Delta\phi^{1,e^-}_{min}$ & All          & $-0.08 $ & $-0.10 $ \\
+      $\Delta\phi^{1,e^-}_{max}$ & All          & $ 0.04 $ & $ 0.05 $ \\
+      $\Delta\phi^{1,e^+}_{min}$ & All          & $-0.04 $ & $-0.05 $ \\
+      $\Delta\phi^{1,e^+}_{max}$ & All          & $ 0.08 $ & $ 0.10 $ \\
+      $\Delta\phi^{2}_{min}$     & All          & $-0.004$ & $-0.008$ \\
+      $\Delta\phi^{2}_{max}$     & All          & $ 0.004$ & $ 0.008$ \\
+      \hline
+      $\Delta z^{2,B}_{min}$     & Barrel       & $-0.09 $ & $-0.2  $ \\
+      $\Delta z^{2,B}_{max}$     & Barrel       & $ 0.09 $ & $ 0.2  $ \\
+      $\Delta r^{2,I}_{min}$     & Intermediate & $-0.2  $ & $-0.2  $ \\
+      $\Delta r^{2,I}_{max}$     & Intermediate & $ 0.2  $ & $ 0.2  $ \\
+      $\Delta r^{2,F}_{min}$     & Forward      & $-0.15 $ & $-0.3  $ \\
+      $\Delta r^{2,F}_{max}$     & Forward      & $ 0.15 $ & $ 0.3  $ \\
+      \hline
+    \end{tabular}
+    \caption{Selection values for the main pixel match windows.}
+    \label{tab:window_definitions}
+  \end{center}
+\end{table}
