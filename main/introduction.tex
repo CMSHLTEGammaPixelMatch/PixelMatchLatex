@@ -1,6 +1,8 @@
 \section{Introduction}
 
-In this note I study the signal efficiency and fake rate for the pixel match window.  Pixel hits are matched to superclusters in the ECAL in the following manner.  The position of the barycenter of the supercluster is used to define an analytic helix which is back propagated, assuming an homogenous magnetic field and using the transverse energy of the supercluster to estimate the curvature of the helix.  Hits are matched by propagating the helix to module planes of the hits.  A hit is considered to be matched if the differences between the $\phi$ and $z$ ($r$) coordinates between the module plane and helix are within ranges of $\Delta\phi$ and $\Delta z$ ($\Delta r$) for hits in the barrel (endcap).  Matches are required for at least two of the three layers, and the innermost layer is matched first with an initial propagation using a loose range in $\Delta\phi$ and $\Delta z$ ($\Delta r$).  The helix is then redefined using the position of the matched hit in the innermost layer, and the helix is propagated out to a second hit.
+In this note I study the signal efficiency and fake rate for the pixel match window.  Electron candidates are reconstructed in the HLT using level 1 superclusters which are matched against pixels hits.  This is a very efficient process for real electrons, but suffers from large backgrounds from multijet events, leading to an increased bandwidth.  To reduce the bandwidth caused by the multijet backgrounds the pixel match window is defined to separate real electrons from fake electrons.  By tightening the pixel window it is possible to retain a very high signal efficiency while significantly reducing the fake rate, making it possible to use otherwise identical triggers in higher luminosity and pileup scenarios.
+
+Pixel hits are matched to superclusters in the electromagnetic calorimeter in the following manner.  The position of the barycenter of the supercluster is used to define an analytic helix which is back propagated, assuming an homogenous magnetic field and using the transverse energy of the supercluster to estimate the curvature of the helix.  Hits are matched by propagating the helix to module planes of the hits.  A hit is considered to be matched if the differences between the $\phi$ and $z$ ($r$) coordinates between the module plane and helix are within ranges of $\Delta\phi$ and $\Delta z$ ($\Delta r$) for hits in the barrel (endcap).  Matches are required for at least two of the three layers, and the innermost layer is matched first with an initial propagation using a loose range in $\Delta\phi$ and $\Delta z$ ($\Delta r$).  The helix is then redefined using the position of the matched hit in the innermost layer, and the helix is propagated out to a second hit.  The second hit can come from the second or third layer when the first hit comes from the first layer, or from the third layer when the first hit comes from the second layer.  In the HLT both charge hypotheses are reconstructed and the best hypothesis is used.  Both hypotheses are propagated to the offline analysis, but only the best hypotheses are shown.
 %AN2010_470_v2
 
 The size of the window in $\Delta\phi$, $\Delta z$, and $\Delta r$ is referred to as the pixel match window.  Two pixel hits consistent with an electron trajectory are required to fall within the pixel match window.  There are three categories of electron candidate depending on the location of the pixel hits:
@@ -13,15 +15,15 @@ The size of the window in $\Delta\phi$, $\Delta z$, and $\Delta r$ is referred t
 
 The following variables were used to define the pixel window in 2010-2012:
 \begin{itemize}
-  \item $\Delta\phi_1^{min}$, the lower (upper) range of $\Delta\phi$ for the first pixel hit for a positive (negative) charge hypothesis, where $\Delta\phi$ is the normalised difference in $\phi$ between the pixel hit, and the trajectory of the electron at the point of closest approach
+  \item $\Delta\phi_1^{min}$, the lower (upper) range of $\Delta\phi$ for the first pixel hit for a positive (negative) charge hypothesis, where $\Delta\phi$ is the difference in $\phi$ between the pixel hit, and the trajectory of the electron at the point of closest approach
   \item $\Delta\phi_1^{max}$, the upper (lower) range of $\Delta\phi$ for the first pixel hit for a positive (negative) charge hypothesis
   \item $\Delta\phi_2$, the absolute range of $\Delta\phi$ for the second pixel hit
-  \item $\Delta z_B$, the absolute range of $\Delta z$ for the second pixel hit for barrel electrons between the pixel hit and the electron trajectory at the point of closest approach
+  \item $\Delta z_{2B}$, the absolute range of $\Delta z$ for the second pixel hit for barrel electrons between the pixel hit and the electron trajectory at the point of closest approach
   \item $\Delta r_{2F}$, the absolute range of $\Delta r$ for the second pixel hit for forward electrons between the pixel hit and the electron trajectory at the point of closest approach
-  \item $\Delta r_I$, the absolute range of $\Delta r$ for the second pixel hit for intermediate electrons between the pixel hit and the electron trajectory at the point of closest approach
+  \item $\Delta r_{2I}$, the absolute range of $\Delta r$ for the second pixel hit for intermediate electrons between the pixel hit and the electron trajectory at the point of closest approach
 \end{itemize}
 
-For historic reasons the window is asymmetric in the $\Delta\phi_1$ variable.  Each category of electrons has four parameters.
+For historic reasons the window is asymmetric in the $\Delta\phi_1$ variable.  Each category of electrons has four parameters.  The corresponding variables for the inner layer, $\Delta z_{1B}$, $\Delta z_{1I}$, and $\Delta z_{1F}$ provide little discrimination, so they are not used in this analysis.
 
 \subsection{Pixel window definitions}
 
